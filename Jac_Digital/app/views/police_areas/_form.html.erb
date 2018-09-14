@@ -1,0 +1,32 @@
+<%= form_with(model: police_area, local: true) do |form| %>
+  <% if police_area.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(police_area.errors.count, "error") %> prohibited this police_area from being saved:</h2>
+
+      <ul>
+      <% police_area.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :area_name %>
+    <%= form.text_field :area_name, id: :police_area_area_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_area %>
+    <%= form.number_field :id_area, id: :police_area_id_area %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_id %>
+    <%= form.text_field :phone_id, id: :police_area_phone_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

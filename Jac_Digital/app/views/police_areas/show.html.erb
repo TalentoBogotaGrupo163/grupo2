@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Area name:</strong>
+  <%= @police_area.area_name %>
+</p>
+
+<p>
+  <strong>Id area:</strong>
+  <%= @police_area.id_area %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @police_area.phone %>
+</p>
+
+<%= link_to 'Edit', edit_police_area_path(@police_area) %> |
+<%= link_to 'Back', police_areas_path %>

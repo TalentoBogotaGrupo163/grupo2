@@ -1,0 +1,37 @@
+<%= form_with(model: location, local: true) do |form| %>
+  <% if location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :location_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mayor_name %>
+    <%= form.text_field :mayor_name, id: :location_mayor_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_number %>
+    <%= form.text_field :id_number, id: :location_id_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city_id %>
+    <%= form.text_field :city_id, id: :location_city_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

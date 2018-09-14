@@ -1,0 +1,2 @@
+module PoliceAreasHelper
+end

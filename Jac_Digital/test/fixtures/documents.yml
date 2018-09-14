@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  document_type: one
+  name: MyString
+  route: MyString
+  company: one
+  state: one
+
+two:
+  document_type: two
+  name: MyString
+  route: MyString
+  company: two
+  state: two

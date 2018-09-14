@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Document type:</strong>
+  <%= @document.document_type %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @document.name %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @document.route %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @document.company %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @document.state %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

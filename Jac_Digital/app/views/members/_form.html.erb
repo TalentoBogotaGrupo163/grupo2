@@ -1,0 +1,62 @@
+<%= form_with(model: member, local: true) do |form| %>
+  <% if member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+      <% member.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :position_id %>
+    <%= form.text_field :position_id, id: :member_position_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :member_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_number %>
+    <%= form.text_field :id_number, id: :member_id_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_initial %>
+    <%= form.date_select :date_initial, id: :member_date_initial %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_end %>
+    <%= form.date_select :date_end, id: :member_date_end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_id %>
+    <%= form.text_field :phone_id, id: :member_phone_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :member_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_id %>
+    <%= form.text_field :company_id, id: :member_company_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state_id %>
+    <%= form.text_field :state_id, id: :member_state_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
