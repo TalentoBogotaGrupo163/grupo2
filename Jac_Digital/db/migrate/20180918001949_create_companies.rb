@@ -3,7 +3,6 @@ class CreateCompanies < ActiveRecord::Migration[5.1]
     create_table :companies do |t|
       t.string :name
       t.string :address
-      t.references :phone, foreign_key: true
       t.string :email
       t.references :location, foreign_key: true
 

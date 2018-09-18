@@ -32,11 +32,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :phone_id %>
-    <%= form.text_field :phone_id, id: :user_phone_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :user %>
     <%= form.text_field :user, id: :user_user %>
   </div>
@@ -48,7 +43,7 @@
 
   <div class="field">
     <%= form.label :birth %>
-    <%= form.text_field :birth, id: :user_birth %>
+    <%= form.date_select :birth, id: :user_birth %>
   </div>
 
   <div class="actions">

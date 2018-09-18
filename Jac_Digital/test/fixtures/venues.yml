@@ -3,11 +3,9 @@
 one:
   name: MyString
   address: MyString
-  phone: one
   capacity: 1
 
 two:
   name: MyString
   address: MyString
-  phone: two
   capacity: 1

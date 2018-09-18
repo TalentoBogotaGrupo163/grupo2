@@ -69,6 +69,6 @@ class PoliceAreasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def police_area_params
-      params.require(:police_area).permit(:area_name, :id_area, :phone_id)
+      params.require(:police_area).permit(:area_name, :id_area)
     end
 end

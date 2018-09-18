@@ -3,9 +3,9 @@
 one:
   id_department: 1
   name: MyString
-  initials: MyString
+  initial: MyString
 
 two:
   id_department: 1
   name: MyString
-  initials: MyString
+  initial: MyString

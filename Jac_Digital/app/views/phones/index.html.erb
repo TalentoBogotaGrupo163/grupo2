@@ -7,6 +7,11 @@
     <tr>
       <th>Type</th>
       <th>Number</th>
+      <th>Company</th>
+      <th>User</th>
+      <th>Venue</th>
+      <th>Member</th>
+      <th>Police area</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +21,11 @@
       <tr>
         <td><%= phone.type %></td>
         <td><%= phone.number %></td>
+        <td><%= phone.company %></td>
+        <td><%= phone.user %></td>
+        <td><%= phone.venue %></td>
+        <td><%= phone.member %></td>
+        <td><%= phone.police_area %></td>
         <td><%= link_to 'Show', phone %></td>
         <td><%= link_to 'Edit', edit_phone_path(phone) %></td>
         <td><%= link_to 'Destroy', phone, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -4,12 +4,12 @@ one:
   document_type: one
   name: MyString
   route: MyString
-  company: one
   state: one
+  company: one
 
 two:
   document_type: two
   name: MyString
   route: MyString
-  company: two
   state: two
+  company: two

@@ -17,7 +17,7 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create member" do
     assert_difference('Member.count') do
-      post members_url, params: { member: { company_id: @member.company_id, date_end: @member.date_end, date_initial: @member.date_initial, email: @member.email, id_number: @member.id_number, name: @member.name, phone_id: @member.phone_id, position_id: @member.position_id, state_id: @member.state_id } }
+      post members_url, params: { member: { company_id: @member.company_id, date_end: @member.date_end, date_initial: @member.date_initial, email: @member.email, id_number: @member.id_number, name: @member.name, position_id: @member.position_id, state_id: @member.state_id } }
     end
 
     assert_redirected_to member_url(Member.last)
@@ -34,7 +34,7 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update member" do
-    patch member_url(@member), params: { member: { company_id: @member.company_id, date_end: @member.date_end, date_initial: @member.date_initial, email: @member.email, id_number: @member.id_number, name: @member.name, phone_id: @member.phone_id, position_id: @member.position_id, state_id: @member.state_id } }
+    patch member_url(@member), params: { member: { company_id: @member.company_id, date_end: @member.date_end, date_initial: @member.date_initial, email: @member.email, id_number: @member.id_number, name: @member.name, position_id: @member.position_id, state_id: @member.state_id } }
     assert_redirected_to member_url(@member)
   end
 

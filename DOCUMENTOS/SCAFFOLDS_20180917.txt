@@ -1,0 +1,40 @@
+rails generate scaffold Department id_department:integer name:string initial:string
+rails generate scaffold City id_city:integer name:string department:references
+rails generate scaffold Location name:string mayor_name:string id_number:bigint city:references
+rails generate scaffold Company name:string address:string email:string location:references
+rails generate scaffold Position name:string 
+rails generate scaffold State name:string
+rails generate scaffold Member position:references name:string id_number:bigint date_initial:date date_end:date email:string company:references state:references
+rails generate scaffold PoliceArea area_name:string id_area:integer
+rails generate scaffold Role name:string description:string
+rails generate scaffold User name:string password:string role:references email:string user:string state:references birth:date 
+rails generate scaffold DocumentType name:string
+rails generate scaffold Document document_type:references name:string route:string state:references company:references
+rails generate scaffold Venue name:string address:string capacity:integer
+rails generate scaffold Phone type:string number:bigint company:integer user:integer venue:integer member:integer police_area:integer 
+rails generate scaffold Event name:string description:string state:references date_initial:date date_end:date hour_initial:time hour_end:time venue:references value:string organizer:string company:references
+
+
+
+--//--
+
+
+
+rails generate scaffold Notice tittle:string body:string image:string date:date
+rails generate scaffold Network name:string url:string 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//para agregar atributos después de crear el scaffold
+rails generate migration add_notice_to_companies notice:references
+rails generate migration add_company_to_notices company:references

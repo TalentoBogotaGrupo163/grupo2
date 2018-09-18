@@ -6,7 +6,6 @@ class CreateMembers < ActiveRecord::Migration[5.1]
       t.bigint :id_number
       t.date :date_initial
       t.date :date_end
-      t.references :phone, foreign_key: true
       t.string :email
       t.references :company, foreign_key: true
       t.references :state, foreign_key: true

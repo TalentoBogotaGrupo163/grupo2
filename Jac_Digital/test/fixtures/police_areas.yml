@@ -3,9 +3,7 @@
 one:
   area_name: MyString
   id_area: 1
-  phone: one
 
 two:
   area_name: MyString
   id_area: 1
-  phone: two

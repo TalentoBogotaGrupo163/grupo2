@@ -11,6 +11,7 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.references :venue, foreign_key: true
       t.string :value
       t.string :organizer
+      t.references :company, foreign_key: true
 
       t.timestamps
     end

@@ -5,17 +5,15 @@ one:
   password: MyString
   role: one
   email: MyString
-  phone: one
   user: MyString
   state: one
-  birth: 
+  birth: 2018-09-17
 
 two:
   name: MyString
   password: MyString
   role: two
   email: MyString
-  phone: two
   user: MyString
   state: two
-  birth: 
+  birth: 2018-09-17

@@ -1,3 +1,3 @@
 class Venue < ApplicationRecord
-  belongs_to :phone
+    has_and_belongs_to_many :phones
 end
