@@ -3,4 +3,5 @@ class Company < ApplicationRecord
   has_and_belongs_to_many :phones
   has_many :menbers
   has_many :documents
+  has_many :networks
 end

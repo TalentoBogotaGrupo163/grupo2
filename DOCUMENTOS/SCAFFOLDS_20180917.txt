@@ -13,25 +13,8 @@ rails generate scaffold Document document_type:references name:string route:stri
 rails generate scaffold Venue name:string address:string capacity:integer
 rails generate scaffold Phone type:string number:bigint company:integer user:integer venue:integer member:integer police_area:integer 
 rails generate scaffold Event name:string description:string state:references date_initial:date date_end:date hour_initial:time hour_end:time venue:references value:string organizer:string company:references
-
-
-
---//--
-
-
-
+rails generate scaffold Network name:string url:string company:references
 rails generate scaffold Notice tittle:string body:string image:string date:date
-rails generate scaffold Network name:string url:string 
-
-
-
-
-
-
-
-
-
-
 
 
 
