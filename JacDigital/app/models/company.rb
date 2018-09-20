@@ -4,4 +4,5 @@ class Company < ApplicationRecord
   has_many :menbers
   has_many :documents
   has_many :networks
+  has_one :police_areas
 end

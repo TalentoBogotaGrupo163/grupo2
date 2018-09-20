@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_19_162222) do
+ActiveRecord::Schema.define(version: 2018_09_19_233822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 2018_09_19_162222) do
   end
 
   create_table "phones", force: :cascade do |t|
-    t.string "type"
+    t.integer "type_phone"
     t.bigint "number"
     t.integer "company"
     t.integer "user"
@@ -141,6 +141,8 @@ ActiveRecord::Schema.define(version: 2018_09_19_162222) do
     t.integer "id_area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_police_areas_on_company_id"
   end
 
   create_table "positions", force: :cascade do |t|
@@ -197,6 +199,7 @@ ActiveRecord::Schema.define(version: 2018_09_19_162222) do
   add_foreign_key "members", "positions"
   add_foreign_key "members", "states"
   add_foreign_key "networks", "companies"
+  add_foreign_key "police_areas", "companies"
   add_foreign_key "users", "roles"
   add_foreign_key "users", "states"
 end
