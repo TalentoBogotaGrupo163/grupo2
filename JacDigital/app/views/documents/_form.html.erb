@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :document_type_id %>
-    <%= form.text_field :document_type_id %>
+    <%= form.select :document_type_id, options_from_collection_for_select(DocumentType.all,'id','name') {}, {} %>
   </div>
 
   <div class="field">
