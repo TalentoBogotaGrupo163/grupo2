@@ -6,16 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-<<<<<<< HEAD
 
-=======
->>>>>>> fdee0f60e73be8e4bb4c6718944140276c80dc07
 Role.create(name: 'Administrador', description: 'Administrador del sistema')
 State.create(name: 'Activo')
 User.create(name: 'María', password:'123456', role_id: 1, email: 'ivonneandreas@hotmail.com', user: 'ivonneandreas', state_id: 1, birth: '')
 
-<<<<<<< HEAD
-=======
 DocumentType.create(name: 'Constitución de junta de acción comunal de barrio, sector  y vereda')
 DocumentType.create(name: 'Constitución cuando existe segregación territorial')
 DocumentType.create(name: 'Modificación territorial del radio de acción ')
@@ -41,4 +36,3 @@ DocumentType.create(name: 'Procesos disciplinarios ')
 DocumentType.create(name: 'Recusación en el proceso disciplinario ')
 DocumentType.create(name: 'Procedimiento de atención para contratos de comodato lote y sede propiedad del municipio')
 
->>>>>>> fdee0f60e73be8e4bb4c6718944140276c80dc07
