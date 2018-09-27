@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_20_011653) do
+ActiveRecord::Schema.define(version: 2018_09_27_014928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(version: 2018_09_20_011653) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["location_id"], name: "index_companies_on_location_id"
+  end
+
+  create_table "companies_phones", id: false, force: :cascade do |t|
+    t.bigint "company_id", null: false
+    t.bigint "phone_id", null: false
   end
 
   create_table "departments", force: :cascade do |t|
@@ -106,6 +111,11 @@ ActiveRecord::Schema.define(version: 2018_09_20_011653) do
     t.index ["state_id"], name: "index_members_on_state_id"
   end
 
+  create_table "members_phones", id: false, force: :cascade do |t|
+    t.bigint "member_id", null: false
+    t.bigint "phone_id", null: false
+  end
+
   create_table "networks", force: :cascade do |t|
     t.string "name"
     t.string "url"
@@ -134,6 +144,21 @@ ActiveRecord::Schema.define(version: 2018_09_20_011653) do
     t.integer "police_area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "phones_police_areas", id: false, force: :cascade do |t|
+    t.bigint "police_area_id", null: false
+    t.bigint "phone_id", null: false
+  end
+
+  create_table "phones_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "phone_id", null: false
+  end
+
+  create_table "phones_venues", id: false, force: :cascade do |t|
+    t.bigint "venue_id", null: false
+    t.bigint "phone_id", null: false
   end
 
   create_table "police_areas", force: :cascade do |t|
