@@ -38,6 +38,12 @@ DocumentType.create(name: 'Procesos disciplinarios ')
 DocumentType.create(name: 'Recusación en el proceso disciplinario ')
 DocumentType.create(name: 'Procedimiento de atención para contratos de comodato lote y sede propiedad del municipio')
 
+#crear departamento
+Department.create(id_department: '11', name: 'Bogotá D.C.', initial: 'BOG')
+
+#Crear la Ciudad 
+City.create(id_city: '1', name: 'Bogotá', id_department: '11')
+
 # Crea localidades por defecto
 Location.create(name: 'Usaquén', mayor_name: 'alcalde1',id_number: '1',city_id: '1')
 Location.create(name: 'Chapinero', mayor_name: 'alcalde1',id_number: '2',city_id: '1')
