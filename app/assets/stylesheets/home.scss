@@ -2,11 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1{
-    font-style: italic;
-}
 
 .diseno{
-    background-color: aquamarine;
+    background-color: #A3E4D7;
     font-weight:bold;
 }
+
+.timp{
+    text-align: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+h1.ext1:hover, h1.ext1:active{
+    color: #28A5BE;
+    text-decoration: none;
+    font-style: italic;
+    text-align: center;
+  }
+
+  table{
+      text-align: justify;    
+  }
+
