@@ -65,3 +65,4 @@ Location.create(name: 'La Candelaria', mayor_name: 'alcalde1',id_number: '17',ci
 Location.create(name: 'Rafael Uribe Uribe', mayor_name: 'alcalde1',id_number: '18',city_id: '1')
 Location.create(name: 'Ciudad Bolívar', mayor_name: 'alcalde1',id_number: '19',city_id: '1')
 Location.create(name: 'Sumapaz', mayor_name: 'alcalde1',id_number: '20',city_id: '1')
+
