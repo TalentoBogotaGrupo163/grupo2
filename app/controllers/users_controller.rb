@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  skip_before_action :verify_authenticity_token
   
   # GET /users
   # GET /users.json
@@ -29,8 +28,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+
+        CrearUsuarioMailer.notify_new_user(@user).deliver
+
         format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        format.json { render :show, status: :created, location: @user }        
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -70,6 +72,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :password, :role_id, :email, :user, :state_id, :birth)
+      params.require(:user).permit(:name, :birthday, :email, :password)
     end
 end

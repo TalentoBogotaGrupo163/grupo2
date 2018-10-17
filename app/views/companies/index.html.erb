@@ -19,10 +19,12 @@
         <td><%= company.name %></td>
         <td><%= company.address %></td>
         <td><%= company.email %></td>
-        <td><%= company.location %></td>
+        <td><%= company.location.name %></td>
         <td><%= link_to 'Show', company %></td>
+        <%if signed_in? %>
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
         <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>

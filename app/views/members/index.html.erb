@@ -20,17 +20,19 @@
   <tbody>
     <% @members.each do |member| %>
       <tr>
-        <td><%= member.position %></td>
+        <td><%= member.position.name %></td>
         <td><%= member.name %></td>
         <td><%= member.id_number %></td>
         <td><%= member.date_initial %></td>
         <td><%= member.date_end %></td>
         <td><%= member.email %></td>
-        <td><%= member.company %></td>
-        <td><%= member.state %></td>
+        <td><%= member.company.name %></td>
+        <td><%= member.state.name %></td>
         <td><%= link_to 'Show', member %></td>
+        <%if signed_in? %>
         <td><%= link_to 'Edit', edit_member_path(member) %></td>
         <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>

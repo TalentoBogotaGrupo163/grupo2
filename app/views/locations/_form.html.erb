@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :city_id %>
-    <%= form.text_field :city_id %>
+    <%= form.select :city_id, options_from_collection_for_select(City.all,'id', 'name') {}, {} %>    
   </div>
 
   <div class="actions">

@@ -14,13 +14,8 @@ class PhonesTest < ApplicationSystemTestCase
     visit phones_url
     click_on "New Phone"
 
-    fill_in "Company", with: @phone.company
-    fill_in "Member", with: @phone.member
     fill_in "Number", with: @phone.number
-    fill_in "Police Area", with: @phone.police_area
-    fill_in "Type", with: @phone.type
-    fill_in "User", with: @phone.user
-    fill_in "Venue", with: @phone.venue
+    fill_in "Type Phone", with: @phone.type_phone
     click_on "Create Phone"
 
     assert_text "Phone was successfully created"
@@ -31,13 +26,8 @@ class PhonesTest < ApplicationSystemTestCase
     visit phones_url
     click_on "Edit", match: :first
 
-    fill_in "Company", with: @phone.company
-    fill_in "Member", with: @phone.member
     fill_in "Number", with: @phone.number
-    fill_in "Police Area", with: @phone.police_area
-    fill_in "Type", with: @phone.type
-    fill_in "User", with: @phone.user
-    fill_in "Venue", with: @phone.venue
+    fill_in "Type Phone", with: @phone.type_phone
     click_on "Update Phone"
 
     assert_text "Phone was successfully updated"

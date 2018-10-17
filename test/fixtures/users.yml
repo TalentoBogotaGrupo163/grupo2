@@ -2,18 +2,8 @@
 
 one:
   name: MyString
-  password: MyString
-  role: one
-  email: MyString
-  user: MyString
-  state: one
-  birth: 2018-09-19
+  birthday: 2018-10-09
 
 two:
   name: MyString
-  password: MyString
-  role: two
-  email: MyString
-  user: MyString
-  state: two
-  birth: 2018-09-19
+  birthday: 2018-10-09

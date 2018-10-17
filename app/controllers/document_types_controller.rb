@@ -1,5 +1,6 @@
 class DocumentTypesController < ApplicationController
   before_action :set_document_type, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, except: [:show, :index]
 
   # GET /document_types
   # GET /document_types.json

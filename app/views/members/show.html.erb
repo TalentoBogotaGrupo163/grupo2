@@ -2,7 +2,7 @@
 
 <p>
   <strong>Position:</strong>
-  <%= @member.position %>
+  <%= @member.position.name %>
 </p>
 
 <p>
@@ -32,12 +32,12 @@
 
 <p>
   <strong>Company:</strong>
-  <%= @member.company %>
+  <%= @member.company.name %>
 </p>
 
 <p>
   <strong>State:</strong>
-  <%= @member.state %>
+  <%= @member.state.name %>
 </p>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |

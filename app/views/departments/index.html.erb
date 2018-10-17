@@ -19,8 +19,10 @@
         <td><%= department.name %></td>
         <td><%= department.initial %></td>
         <td><%= link_to 'Show', department %></td>
+        <%if signed_in? %>
         <td><%= link_to 'Edit', edit_department_path(department) %></td>
         <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>

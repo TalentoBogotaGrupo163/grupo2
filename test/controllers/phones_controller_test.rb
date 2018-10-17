@@ -17,7 +17,7 @@ class PhonesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create phone" do
     assert_difference('Phone.count') do
-      post phones_url, params: { phone: { company: @phone.company, member: @phone.member, number: @phone.number, police_area: @phone.police_area, type: @phone.type, user: @phone.user, venue: @phone.venue } }
+      post phones_url, params: { phone: { number: @phone.number, type_phone: @phone.type_phone } }
     end
 
     assert_redirected_to phone_url(Phone.last)
@@ -34,7 +34,7 @@ class PhonesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update phone" do
-    patch phone_url(@phone), params: { phone: { company: @phone.company, member: @phone.member, number: @phone.number, police_area: @phone.police_area, type: @phone.type, user: @phone.user, venue: @phone.venue } }
+    patch phone_url(@phone), params: { phone: { number: @phone.number, type_phone: @phone.type_phone } }
     assert_redirected_to phone_url(@phone)
   end
 

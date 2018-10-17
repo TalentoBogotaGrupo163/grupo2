@@ -17,7 +17,7 @@ class PoliceAreasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create police_area" do
     assert_difference('PoliceArea.count') do
-      post police_areas_url, params: { police_area: { area_name: @police_area.area_name, id_area: @police_area.id_area } }
+      post police_areas_url, params: { police_area: { address: @police_area.address, area_name: @police_area.area_name, email: @police_area.email, id_area: @police_area.id_area } }
     end
 
     assert_redirected_to police_area_url(PoliceArea.last)
@@ -34,7 +34,7 @@ class PoliceAreasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update police_area" do
-    patch police_area_url(@police_area), params: { police_area: { area_name: @police_area.area_name, id_area: @police_area.id_area } }
+    patch police_area_url(@police_area), params: { police_area: { address: @police_area.address, area_name: @police_area.area_name, email: @police_area.email, id_area: @police_area.id_area } }
     assert_redirected_to police_area_url(@police_area)
   end
 

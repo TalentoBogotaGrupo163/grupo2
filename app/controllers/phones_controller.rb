@@ -1,5 +1,6 @@
 class PhonesController < ApplicationController
   before_action :set_phone, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, except: [:show, :index]
 
   # GET /phones
   # GET /phones.json
@@ -69,6 +70,6 @@ class PhonesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def phone_params
-      params.require(:phone).permit(:type_phone, :number, :company, :user, :venue, :member, :police_area)
+      params.require(:phone).permit(:type_phone, :number)
     end
 end

@@ -17,10 +17,12 @@
       <tr>
         <td><%= city.id_city %></td>
         <td><%= city.name %></td>
-        <td><%= city.department %></td>
+        <td><%= city.department.name %></td>
         <td><%= link_to 'Show', city %></td>
+        <%if signed_in? %>
         <td><%= link_to 'Edit', edit_city_path(city) %></td>
         <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>

@@ -7,6 +7,8 @@
     <tr>
       <th>Area name</th>
       <th>Id area</th>
+      <th>Email</th>
+      <th>Address</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +18,13 @@
       <tr>
         <td><%= police_area.area_name %></td>
         <td><%= police_area.id_area %></td>
+        <td><%= police_area.email %></td>
+        <td><%= police_area.address %></td>
         <td><%= link_to 'Show', police_area %></td>
+        <%if signed_in? %>
         <td><%= link_to 'Edit', edit_police_area_path(police_area) %></td>
         <td><%= link_to 'Destroy', police_area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>

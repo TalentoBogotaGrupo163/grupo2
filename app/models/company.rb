@@ -1,14 +1,16 @@
 class Company < ApplicationRecord
-  #relaciones
+
+  #RELACIONES:
   belongs_to :location
   has_and_belongs_to_many :phones
-  has_many :menbers
+  has_many :members
+  has_and_belongs_to_many :police_areas
   has_many :documents
+  has_many :events
   has_many :networks
-  has_one :police_areas
 
-  #validaciones
-  validates :name, presence:{message:"Campo Obligatorio"}
-  validates :address, presence:{message:"Campo Obligatorio"}
-  
+  #VALIDACIONES:
+  validates :name, presence:{message:"Digite por favor el nombre de la JAC"}
+  validates :email, presence:{message:"email Obligatorio"}
+
 end

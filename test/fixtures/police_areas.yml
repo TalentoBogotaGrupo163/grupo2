@@ -3,7 +3,11 @@
 one:
   area_name: MyString
   id_area: 1
+  email: MyString
+  address: MyString
 
 two:
   area_name: MyString
   id_area: 1
+  email: MyString
+  address: MyString

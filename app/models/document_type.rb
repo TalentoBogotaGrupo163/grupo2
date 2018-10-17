@@ -1,6 +1,6 @@
 class DocumentType < ApplicationRecord
-    #relaciones
+    # RELACIONES:
     has_many :documents
-    #Validaciones
+    # VALIDACIONES:
     validates :name, presence:{message:"Por favor ingresar Nombre del Tipo de documento."}
 end

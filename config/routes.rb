@@ -1,25 +1,25 @@
 Rails.application.routes.draw do
-  get 'home/index'
-
-  root 'home#index'
-
-  devise_for :users
   resources :notices
   resources :networks
   resources :events
-  resources :phones
   resources :venues
   resources :documents
   resources :document_types
-  resources :users
-  resources :roles
   resources :police_areas
   resources :members
+  resources :system_users
+  resources :roles
   resources :states
   resources :positions
   resources :companies
+  resources :phones
   resources :locations
   resources :cities
+  get 'home/index'
+
+  root 'home#index'
+  
   resources :departments
+  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

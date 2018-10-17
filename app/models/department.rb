@@ -6,4 +6,5 @@ class Department < ApplicationRecord
     validates :id_department, presence:{message:"Código Obligatorio."}
     validates :name, presence:{message:"Por favor ingrese el nombre."}
     validates :initial, presence:{message:"Ingrese las Iniciales del Departamento."}
+
 end

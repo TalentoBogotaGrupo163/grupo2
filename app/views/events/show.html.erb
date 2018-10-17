@@ -12,7 +12,7 @@
 
 <p>
   <strong>State:</strong>
-  <%= @event.state %>
+  <%= @event.state.name %>
 </p>
 
 <p>
@@ -37,7 +37,7 @@
 
 <p>
   <strong>Venue:</strong>
-  <%= @event.venue %>
+  <%= @event.venue.name %>
 </p>
 
 <p>
@@ -52,7 +52,7 @@
 
 <p>
   <strong>Company:</strong>
-  <%= @event.company %>
+  <%= @event.company.name %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

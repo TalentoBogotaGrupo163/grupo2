@@ -25,18 +25,20 @@
       <tr>
         <td><%= event.name %></td>
         <td><%= event.description %></td>
-        <td><%= event.state %></td>
+        <td><%= event.state.name %></td>
         <td><%= event.date_initial %></td>
         <td><%= event.date_end %></td>
         <td><%= event.hour_initial %></td>
         <td><%= event.hour_end %></td>
-        <td><%= event.venue %></td>
+        <td><%= event.venue.name %></td>
         <td><%= event.value %></td>
         <td><%= event.organizer %></td>
-        <td><%= event.company %></td>
+        <td><%= event.company.name %></td>
         <td><%= link_to 'Show', event %></td>
+        <%if signed_in? %>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_27_014928) do
+ActiveRecord::Schema.define(version: 2018_10_16_160908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,11 @@ ActiveRecord::Schema.define(version: 2018_09_27_014928) do
   create_table "companies_phones", id: false, force: :cascade do |t|
     t.bigint "company_id", null: false
     t.bigint "phone_id", null: false
+  end
+
+  create_table "companies_policeAreas", id: false, force: :cascade do |t|
+    t.bigint "policeArea_id", null: false
+    t.bigint "company_id", null: false
   end
 
   create_table "departments", force: :cascade do |t|
@@ -135,24 +140,19 @@ ActiveRecord::Schema.define(version: 2018_09_27_014928) do
   end
 
   create_table "phones", force: :cascade do |t|
-    t.integer "type_phone"
+    t.string "type_phone"
     t.bigint "number"
-    t.integer "company"
-    t.integer "user"
-    t.integer "venue"
-    t.integer "member"
-    t.integer "police_area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "phones_police_areas", id: false, force: :cascade do |t|
-    t.bigint "police_area_id", null: false
+  create_table "phones_policeAreas", id: false, force: :cascade do |t|
+    t.bigint "policeArea_id", null: false
     t.bigint "phone_id", null: false
   end
 
-  create_table "phones_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
+  create_table "phones_systemUsers", id: false, force: :cascade do |t|
+    t.bigint "systemUser_id", null: false
     t.bigint "phone_id", null: false
   end
 
@@ -164,10 +164,10 @@ ActiveRecord::Schema.define(version: 2018_09_27_014928) do
   create_table "police_areas", force: :cascade do |t|
     t.string "area_name"
     t.integer "id_area"
+    t.string "email"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "company_id"
-    t.index ["company_id"], name: "index_police_areas_on_company_id"
   end
 
   create_table "positions", force: :cascade do |t|
@@ -189,24 +189,28 @@ ActiveRecord::Schema.define(version: 2018_09_27_014928) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "password"
+  create_table "system_users", force: :cascade do |t|
+    t.bigint "user_id"
     t.bigint "role_id"
-    t.string "user"
     t.bigint "state_id"
-    t.date "birth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["role_id"], name: "index_users_on_role_id"
-    t.index ["state_id"], name: "index_users_on_state_id"
+    t.index ["role_id"], name: "index_system_users_on_role_id"
+    t.index ["state_id"], name: "index_system_users_on_state_id"
+    t.index ["user_id"], name: "index_system_users_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.date "birthday"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "encrypted_password", limit: 128
+    t.string "confirmation_token", limit: 128
+    t.string "remember_token", limit: 128
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
   create_table "venues", force: :cascade do |t|
@@ -230,7 +234,7 @@ ActiveRecord::Schema.define(version: 2018_09_27_014928) do
   add_foreign_key "members", "positions"
   add_foreign_key "members", "states"
   add_foreign_key "networks", "companies"
-  add_foreign_key "police_areas", "companies"
-  add_foreign_key "users", "roles"
-  add_foreign_key "users", "states"
+  add_foreign_key "system_users", "roles"
+  add_foreign_key "system_users", "states"
+  add_foreign_key "system_users", "users"
 end

@@ -1,19 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: 
+  type_phone: MyString
   number: 
-  company: 1
-  user: 1
-  venue: 1
-  member: 1
-  police_area: 1
 
 two:
-  type: 
+  type_phone: MyString
   number: 
-  company: 1
-  user: 1
-  venue: 1
-  member: 1
-  police_area: 1

@@ -23,8 +23,10 @@
         <td><%= document.state %></td>
         <td><%= document.company %></td>
         <td><%= link_to 'Show', document %></td>
+        <%if signed_in? %>
         <td><%= link_to 'Edit', edit_document_path(document) %></td>
         <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>

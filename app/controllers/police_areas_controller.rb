@@ -1,5 +1,6 @@
 class PoliceAreasController < ApplicationController
   before_action :set_police_area, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, except: [:show, :index]
 
   # GET /police_areas
   # GET /police_areas.json
@@ -69,6 +70,6 @@ class PoliceAreasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def police_area_params
-      params.require(:police_area).permit(:area_name, :id_area)
+      params.require(:police_area).permit(:area_name, :id_area, :email, :address)
     end
 end

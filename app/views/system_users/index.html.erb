@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>System Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Role</th>
+      <th>State</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @system_users.each do |system_user| %>
+      <tr>
+        <td><%= system_user.user.email %></td>
+        <td><%= system_user.role.name %></td>
+        <td><%= system_user.state.name %></td>
+        <td><%= link_to 'Show', system_user %></td>
+        <%if signed_in? %>
+        <td><%= link_to 'Edit', edit_system_user_path(system_user) %></td>
+        <td><%= link_to 'Destroy', system_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New System User', new_system_user_path %>

@@ -14,7 +14,9 @@ class PoliceAreasTest < ApplicationSystemTestCase
     visit police_areas_url
     click_on "New Police Area"
 
+    fill_in "Address", with: @police_area.address
     fill_in "Area Name", with: @police_area.area_name
+    fill_in "Email", with: @police_area.email
     fill_in "Id Area", with: @police_area.id_area
     click_on "Create Police area"
 
@@ -26,7 +28,9 @@ class PoliceAreasTest < ApplicationSystemTestCase
     visit police_areas_url
     click_on "Edit", match: :first
 
+    fill_in "Address", with: @police_area.address
     fill_in "Area Name", with: @police_area.area_name
+    fill_in "Email", with: @police_area.email
     fill_in "Id Area", with: @police_area.id_area
     click_on "Update Police area"
 

@@ -1,1 +1,0 @@
-Haciendo la clonación del repositorio de git para el proyecto.

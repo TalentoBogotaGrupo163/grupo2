@@ -17,10 +17,12 @@
       <tr>
         <td><%= network.name %></td>
         <td><%= network.url %></td>
-        <td><%= network.company %></td>
+        <td><%= network.company.name %></td>
         <td><%= link_to 'Show', network %></td>
+        <%if signed_in? %>
         <td><%= link_to 'Edit', edit_network_path(network) %></td>
         <td><%= link_to 'Destroy', network, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>
