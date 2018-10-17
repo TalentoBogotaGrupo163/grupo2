@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :document_type_id %>
-    <%= form.text_field :document_type_id %>
+    <%= form.select :document_type_id, options_from_collection_for_select(DocumentType.all,'id','name') {}, {} %>
   </div>
 
   <div class="field">
@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :state_id %>
-    <%= form.text_field :state_id %>
+    <%= form.select :state_id, options_from_collection_for_select(State.all,'id','name') {}, {} %>
   </div>
 
   <div class="field">
     <%= form.label :company_id %>
-    <%= form.text_field :company_id %>
+    <%= form.select :company_id, options_from_collection_for_select(Company.all,'id','name') {}, {} %>
   </div>
 
   <div class="actions">

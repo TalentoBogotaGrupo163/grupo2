@@ -2,7 +2,7 @@
 
 <p>
   <strong>Document type:</strong>
-  <%= @document.document_type %>
+  <%= @document.document_type.name %>
 </p>
 
 <p>
@@ -17,12 +17,12 @@
 
 <p>
   <strong>State:</strong>
-  <%= @document.state %>
+  <%= @document.state.name %>
 </p>
 
 <p>
   <strong>Company:</strong>
-  <%= @document.company %>
+  <%= @document.company.name %>
 </p>
 
 <%= link_to 'Edit', edit_document_path(@document) %> |

@@ -17,11 +17,11 @@
   <tbody>
     <% @documents.each do |document| %>
       <tr>
-        <td><%= document.document_type %></td>
+        <td><%= document.document_type.name %></td>
         <td><%= document.name %></td>
         <td><%= document.route %></td>
-        <td><%= document.state %></td>
-        <td><%= document.company %></td>
+        <td><%= document.state.name %></td>
+        <td><%= document.company.name %></td>
         <td><%= link_to 'Show', document %></td>
         <%if signed_in? %>
         <td><%= link_to 'Edit', edit_document_path(document) %></td>
