@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'login/index'
+  get 'login/show'
+  get 'login/index'
   resources :notices
   resources :networks
   resources :events

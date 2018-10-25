@@ -1,7 +1,7 @@
 class RolesController < ApplicationController
   before_action :set_role, only: [:show, :edit, :update, :destroy]
-  before_action :require_login, except: [:show, :index]
-
+  #before_action :require_login, except: [:show, :index]
+  skip_before_action :verify_authenticity_token
   # GET /roles
   # GET /roles.json
   def index

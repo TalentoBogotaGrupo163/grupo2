@@ -31,6 +31,14 @@
     <%= form.select :location_id, options_from_collection_for_select(Location.all,'id', 'name') {}, {} %>    
   </div>
 
+  <div class="field">
+    <%= form.fields_for :company_phones do |builder| %>    
+      <%= render "company_phones_fields", f: builder %>
+    <%end%>
+  </div>
+ 
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
