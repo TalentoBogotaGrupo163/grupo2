@@ -1,6 +1,8 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
-  before_action :require_login, except: [:show, :index]
+  before_action :require_login, only: [:edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
+  
 
   # GET /companies
   # GET /companies.json

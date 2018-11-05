@@ -1,9 +1,7 @@
 class DepartmentsController < ApplicationController
   before_action :set_department, only: [:show, :edit, :update, :destroy]
-  #before_action :require_login, except: [:show, :index]
-  skip_before_action :verify_authenticity_token
+  before_action :require_login, except: [:show, :index]
 
-  
   # GET /departments
   # GET /departments.json
   def index
